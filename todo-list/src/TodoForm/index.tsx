@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AddTask = () => {
+export const TodoForm = () => {
   return (
     <>
       <div className="flex justify-between p-5" id="add-task">
@@ -60,4 +60,4 @@ export const AddTask = () => {
   );
 };
 
-export default AddTask;
+export default TodoForm;

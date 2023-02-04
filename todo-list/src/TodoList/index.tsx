@@ -5,7 +5,7 @@ export const TodoList = () => {
     <div id="#todo-list">
       <div className="flex justify-between p-5">
         <span className="text-4xl">todo</span>
-        <a href="add-task" className="text-4xl">
+        <a href="todo-form" className="text-4xl">
           +
         </a>
       </div>
