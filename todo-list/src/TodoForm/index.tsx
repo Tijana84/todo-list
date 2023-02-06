@@ -12,7 +12,6 @@ export const TodoForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
   };
 
   // useEffect(() => {

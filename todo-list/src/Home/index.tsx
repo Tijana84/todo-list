@@ -1,8 +1,15 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  const navigation = useNavigate();
   const [hidden, setHidden] = useState(true);
+
+  const handleGetStarted = () => {
+    navigation("/todo-list");
+  };
+  
   return (
     <div>
       <div className="flex flex-col justify-center items-center mt-48">
@@ -18,13 +25,13 @@ export const Home = () => {
         </p>
       </div>
       <div className="flex flex-col justify-center items-center">
-        <a
+        <button
           type="button"
-          href="todo-list"
+          onClick={handleGetStarted}
           className="h-8 w-32 bg-black text-white tex-base flex justify-center items-center rounded-md"
         >
           Get Started
-        </a>
+        </button>
         <img
           src="https://www.fashion.hr/EasyEdit/UserFiles/News/kulturaumjetnostdivne-ilustracije-koje-ce-vam-dopustiti-da-u-njima-p/kulturaumjetnostdivne-ilustracije-koje-ce-vam-dopustiti-da-u-njima-p-637634941012366625_467_467.jpeg"
           className="w-44 h-44 md:w-96 md:h-96 mt-16"

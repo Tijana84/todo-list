@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const TodoList = () => {
-  const [cheked, setChecked] = useState(false);
+  const navigation = useNavigate();
+  const [checked, setChecked] = useState(false);
   const [hidden, setHidden] = useState(true);
-
 
   const handleChangeChecked = () => {
     setChecked(!setChecked);
@@ -13,13 +14,17 @@ export const TodoList = () => {
 
   const handleDelete = () => {};
 
+  const handlePlus = () => {
+    navigation("/todo-form");
+  };
+
   return (
     <div id="#todo-list">
       <div className="flex justify-between p-5">
         <span className="text-4xl">todo</span>
-        <a href="todo-form" className="text-4xl">
+        <button onClick={handlePlus} className="text-4xl">
           +
-        </a>
+        </button>
       </div>
       <div className="flex px-2 mt-6">
         <div className="flex mr-4">
