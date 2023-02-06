@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+const json = '{"title":"", "description":""}';
+const obj = JSON.parse(json);
+
+console.log(obj.title);
+console.log(obj.description);
 
 export const TodoForm = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+  };
+
+  // useEffect(() => {
+  //   localStorage.setTitle("title", JSON.stringify(title));
+  // }, [title]);
+
+  // useEffect(() => {
+  //   localStorage.setDescription("description", JSON.stringify(description));
+  // }, [description]);
+
   return (
     <>
       <div className="flex justify-between p-5" id="add-task">
         <button className="bg-white text-black text-base h-8 w-24 rounded-md">
           Cancel
         </button>
-        <button className="bg-black text-white text-base h-8 w-24 rounded-md">
+        <button
+          className="bg-black text-white text-base h-8 w-24 rounded-md"
+          onClick={(e) => handleSubmit(e)}
+        >
           Add
         </button>
       </div>
@@ -17,6 +42,7 @@ export const TodoForm = () => {
         </label>
         <input
           type="text"
+          onChange={(event) => setTitle(event.target.value)}
           placeholder="add a title..."
           className="w-80 h-10 bg-yellow rounded-md mb-8 p-5 border-none"
         />
@@ -25,6 +51,7 @@ export const TodoForm = () => {
         </label>
         <input
           type="text"
+          onChange={(event) => setDescription(event.target.value)}
           placeholder="add a decription ..."
           className="w-80 h-32 bg-yellow rounded-md mb-8 p-5"
         />

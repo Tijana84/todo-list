@@ -1,8 +1,8 @@
 import React from "react";
-
+import { useState } from "react";
 
 export const Home = () => {
-
+  const [hidden, setHidden] = useState(true);
   return (
     <div>
       <div className="flex flex-col justify-center items-center mt-48">
