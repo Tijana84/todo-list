@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import heroUrl from "../images/hero.png";
 
 export const Home = () => {
   const navigation = useNavigate();
@@ -9,7 +10,7 @@ export const Home = () => {
   const handleGetStarted = () => {
     navigation("/todo-list");
   };
-  
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center mt-48">
@@ -33,7 +34,7 @@ export const Home = () => {
           Get Started
         </button>
         <img
-          src="https://www.fashion.hr/EasyEdit/UserFiles/News/kulturaumjetnostdivne-ilustracije-koje-ce-vam-dopustiti-da-u-njima-p/kulturaumjetnostdivne-ilustracije-koje-ce-vam-dopustiti-da-u-njima-p-637634941012366625_467_467.jpeg"
+          src={heroUrl}
           className="w-44 h-44 md:w-96 md:h-96 mt-16"
           alt="friends"
         />
