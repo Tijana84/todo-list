@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const json = '{"title":"", "description":""}';
 const obj = JSON.parse(json);
@@ -7,12 +8,17 @@ console.log(obj.title);
 console.log(obj.description);
 
 export const TodoForm = () => {
+  const navigation = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
+
+  const handleCancel = () => {
+    navigation("/todo-list");
+  }
 
   // useEffect(() => {
   //   localStorage.setTitle("title", JSON.stringify(title));
@@ -25,7 +31,7 @@ export const TodoForm = () => {
   return (
     <>
       <div className="flex justify-between p-5" id="add-task">
-        <button className="bg-white text-black text-base h-8 w-24 rounded-md">
+        <button onClick={handleCancel} className="bg-white text-black text-base h-8 w-24 rounded-md">
           Cancel
         </button>
         <button
