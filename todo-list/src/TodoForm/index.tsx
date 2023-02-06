@@ -8,6 +8,10 @@ export const TodoForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+<<<<<<< HEAD
+=======
+    console.log(title, description);
+>>>>>>> f39381480639614f0d13346ce141c84ec7ae4c2c
     localStorage.setItem("title", JSON.stringify(title));
     localStorage.setItem("description", JSON.stringify(description));
     localStorage.setItem("isDone", JSON.stringify(false));
