@@ -92,7 +92,7 @@ export const TodoList = () => {
           <input
             type="checkbox"
             className="text-grey rounded-lg"
-            onChange={handleChangeChecked}
+            onChange={(e) => setChecked(e.target.checked)}
           />
         </div>
       </div>
@@ -133,7 +133,7 @@ export const TodoList = () => {
           <input
             type="checkbox"
             className="text-grey rounded-lg"
-            onChange={handleChangeChecked}
+            onChange={(e) => setChecked(e.target.checked)}
           />
         </div>
       </div>
@@ -179,7 +179,7 @@ export const TodoList = () => {
           <input
             type="checkbox"
             className="text-grey rounded-lg"
-            onChange={handleChangeChecked}
+            onChange={(e) => setChecked(e.target.checked)}
           />
         </div>
       </div>
