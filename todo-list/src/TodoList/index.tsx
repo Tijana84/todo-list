@@ -5,25 +5,12 @@ export const TodoList = () => {
   const navigation = useNavigate();
   const [checked, setChecked] = useState(false);
   const [hidden, setHidden] = useState(true);
-  const [TodoList, setTodoList] = useState([]);
-  const [newTodoList, setNewTodoList] = useState("");
-  // const [todos, setTodos] = useState(() => {
-  //   // get the todos from localstorage
-  //   const savedTodos = localStorage.getItem("todos");
-  //   // if there are todos stored
-  //   if (savedTodos) {
-  //     // return the parsed the JSON object back to a javascript object
-  //     return JSON.parse(savedTodos);
-  //     // otherwise
-  //   } else {
-  //     // return an empty array
-  //     return [];
-  //   }
-  // });
 
-  const title = localStorage.getItem("title");
-  const description = localStorage.getItem("description");
+  const tasks =  JSON.parse(localStorage.getItem("tasks") || "[]");
 
+console.log(tasks)
+ const title = "";
+ const description = "";
   const handleChangeChecked = () => {
     setChecked(!setChecked);
   };
@@ -81,21 +68,20 @@ export const TodoList = () => {
               ...
             </button>
             {!hidden ? (
-             
-                <div className="flex flex-col items-end p-2 absolute top-0 right-4">
-                  <button
-                    onClick={() => handleEdit()}
-                    className="bg-white h-10 w-32 rounded-xl mb-1"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDelete()}
-                    className="bg-white h-10 w-32 rounded-xl"
-                  >
-                    Delete
-                  </button>
-                </div>
+              <div className="flex flex-col items-end p-2 absolute top-0 right-4">
+                <button
+                  onClick={() => handleEdit()}
+                  className="bg-white h-10 w-32 rounded-xl mb-1"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete()}
+                  className="bg-white h-10 w-32 rounded-xl"
+                >
+                  Delete
+                </button>
+              </div>
             ) : null}
           </div>
           <p className="text-sm mb-2 p-2">{description}</p>

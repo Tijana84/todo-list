@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const TodoForm = () => {
@@ -6,11 +6,16 @@ export const TodoForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    localStorage.setItem("title", title);
-    localStorage.setItem("description", description);
-    localStorage.setItem("isDone", JSON.stringify(false));
+    const newTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+    newTasks.push({
+      title,
+      description,
+      isDone: false,
+    });
+
+    localStorage.setItem("tasks", JSON.stringify(newTasks));
     handleCancel();
   };
 
