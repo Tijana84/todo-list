@@ -4,13 +4,10 @@ import { useNavigate } from "react-router-dom";
 export const TodoList = () => {
   const navigation = useNavigate();
   const [checked, setChecked] = useState(false);
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState<any>({});
 
-  const tasks =  JSON.parse(localStorage.getItem("tasks") || "[]");
+  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 
-console.log(tasks)
- const title = "";
- const description = "";
   const handleChangeChecked = () => {
     setChecked(!setChecked);
   };
@@ -22,7 +19,7 @@ console.log(tasks)
   const handlePlus = () => {
     navigation("/todo-form");
   };
-
+  console.log(hidden)
   return (
     <div>
       <div className="flex justify-between p-5 mb-6">
@@ -57,46 +54,49 @@ console.log(tasks)
           </a>
         </div>
       </div>
-      {title && description ? (
-        <div className="bg-yellow rounded-lg mx-2 relative">
-          <div className="flex justify-between items-end">
-            <h1 className="text-lg font-semibold p-2">{title}</h1>
-            <button
-              className="p-2 text-grey"
-              onClick={() => setHidden((s) => !s)}
-            >
-              ...
-            </button>
-            {!hidden ? (
-              <div className="flex flex-col items-end p-2 absolute top-0 right-4">
-                <button
-                  onClick={() => handleEdit()}
-                  className="bg-white h-10 w-32 rounded-xl mb-1"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDelete()}
-                  className="bg-white h-10 w-32 rounded-xl"
-                >
-                  Delete
-                </button>
-              </div>
-            ) : null}
-          </div>
-          <p className="text-sm mb-2 p-2">{description}</p>
-          <div className="flex justify-end p-2">
-            <label htmlFor="" className="mr-1 text-xs text-grey">
-              done
-            </label>
-            <input
-              type="checkbox"
-              className="text-grey rounded-lg"
-              onChange={(e) => setChecked(e.target.checked)}
-            />
-          </div>
+      {tasks.map((data:any, index: number) => (
+        <div key={index} className="bg-yellow rounded-lg m-2 relative">
+        <div className="flex justify-between items-end">
+          <h1 className="text-lg font-semibold p-2">{data.title}</h1>
+          <button
+            className="p-2 text-grey"
+            onClick={() => setHidden({
+              ...hidden,[index]: !hidden[index]
+            })}
+          >
+            ...
+          </button>
+          {hidden[index] ? (
+            <div className="flex flex-col items-end p-2 absolute top-0 right-4">
+              <button
+                onClick={() => handleEdit()}
+                className="bg-white h-10 w-32 rounded-xl mb-1"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDelete()}
+                className="bg-white h-10 w-32 rounded-xl"
+              >
+                Delete
+              </button>
+            </div>
+          ) : null}
         </div>
-      ) : null}
+        <p className="text-sm mb-2 p-2">{data.description}</p>
+        <div className="flex justify-end p-2">
+          <label htmlFor="" className="mr-1 text-xs text-grey">
+            done
+          </label>
+          <input
+            type="checkbox"
+            className="text-grey rounded-lg"
+            onChange={(e) => setChecked(e.target.checked)}
+          />
+        </div>
+      </div> 
+      ))}
+      
     </div>
   );
 };
