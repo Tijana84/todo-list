@@ -52,8 +52,7 @@ export const TodoForm = () => {
         <label htmlFor="title" className="text-xl mb-4">
           Description
         </label>
-        <input
-          type="text"
+        <textarea
           onChange={(event) => setDescription(event.target.value)}
           placeholder="add a decription ..."
           className="w-80 h-32 bg-yellow rounded-md mb-8 p-5"

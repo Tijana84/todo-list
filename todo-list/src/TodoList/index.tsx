@@ -7,14 +7,16 @@ export const TodoList = () => {
   const [hidden, setHidden] = useState<any>({});
 
   const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-
+   
   const handleChangeChecked = () => {
     setChecked(!setChecked);
   };
 
   const handleEdit = () => {};
 
-  const handleDelete = () => {};
+  const handleDelete = () => {
+  
+  };
 
   const handlePlus = () => {
     navigation("/todo-form");
