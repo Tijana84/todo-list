@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const TodoList = () => {
@@ -14,7 +14,9 @@ export const TodoList = () => {
     setChecked(!setChecked);
   };
 
-  const handleEdit = () => {};
+  const handleEdit = () => {
+    navigation("/edit-form");
+  };
 
   const handleDelete = (index: number) => {
     const newTasks = [...tasks];

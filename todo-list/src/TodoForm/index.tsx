@@ -25,7 +25,7 @@ export const TodoForm = () => {
 
   return (
     <>
-      <div className="flex justify-between p-5" id="add-task">
+      <div className="flex justify-between p-5">
         <button
           onClick={handleCancel}
           className="bg-white text-black text-base h-8 w-24 rounded-md"

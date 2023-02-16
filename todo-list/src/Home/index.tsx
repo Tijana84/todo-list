@@ -35,7 +35,7 @@ export const Home = () => {
         </button>
         <img
           src={heroUrl}
-          className="w-44 h-44 md:w-96 md:h-96 mt-16"
+          className="mt-16"
           alt="friends"
         />
       </div>
