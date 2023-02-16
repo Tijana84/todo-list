@@ -30,11 +30,7 @@ export const Home = () => {
         >
           Get Started
         </button>
-        <img
-          src={heroUrl}
-          className="mt-16"
-          alt="friends"
-        />
+        <img src={heroUrl} className="mt-16" alt="friends" />
       </div>
     </div>
   );
