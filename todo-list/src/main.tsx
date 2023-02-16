@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/" element={<Home />}></Route>
         <Route path="/todo-list" element={<TodoList />}></Route>
         <Route path="/todo-form" element={<TodoForm />}></Route>
-        <Route path="/edit-form" element={<EditForm />}></Route>
+        <Route path="/edit-form/:index" element={<EditForm />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

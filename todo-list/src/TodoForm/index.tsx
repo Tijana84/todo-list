@@ -34,7 +34,7 @@ export const TodoForm = () => {
         </button>
         <button
           className="bg-black text-white text-base h-8 w-24 rounded-md"
-          onClick={(e) => handleSubmit(e)}
+          onClick={handleSubmit}
         >
           Add
         </button>

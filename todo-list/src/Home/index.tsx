@@ -1,11 +1,8 @@
-import React from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import heroUrl from "../images/hero.png";
 
 export const Home = () => {
   const navigation = useNavigate();
-  const [hidden, setHidden] = useState(true);
 
   const handleGetStarted = () => {
     navigation("/todo-list");

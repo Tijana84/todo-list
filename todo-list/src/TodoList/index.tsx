@@ -14,8 +14,8 @@ export const TodoList = () => {
     setChecked(!setChecked);
   };
 
-  const handleEdit = () => {
-    navigation("/edit-form");
+  const handleEdit = (index: number) => {
+    navigation("/edit-form/" + index);
   };
 
   const handleDelete = (index: number) => {
@@ -84,7 +84,7 @@ export const TodoList = () => {
                 className="flex flex-col items-end p-2 absolute top-0 right-4"
               >
                 <button
-                  onClick={() => handleEdit()}
+                  onClick={() => handleEdit(index)}
                   className="bg-white h-10 w-32 rounded-xl mb-1"
                 >
                   Edit
