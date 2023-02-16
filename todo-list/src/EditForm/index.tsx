@@ -24,7 +24,7 @@ export const EditForm = () => {
         <input
           type="text"
           onChange={(event) => setTitle(event.target.value)}
-          placeholder="add a title..."
+          placeholder="edit a title..."
           className="w-80 h-10 bg-yellow rounded-md mb-8 p-5 border-none"
         />
         <label htmlFor="title" className="text-xl mb-4">
@@ -32,7 +32,7 @@ export const EditForm = () => {
         </label>
         <textarea
           onChange={(event) => setDescription(event.target.value)}
-          placeholder="add a decription ..."
+          placeholder="edit a decription ..."
           className="w-80 h-32 bg-yellow rounded-md mb-8 p-5"
         />
       </div>
