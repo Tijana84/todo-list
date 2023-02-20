@@ -35,40 +35,73 @@ export const TodoEdit = () => {
 
   return (
     <>
-      <div className="flex justify-between p-5">
+      <div className="flex justify-between items-end p-4 mt-4">
         <button
           onClick={handleCancel}
-          className="bg-white text-black text-base h-8 w-24 rounded-md"
+          className="bg-white text-black text-base"
         >
           Cancel
         </button>
         <button
-          className="bg-blue text-white text-base h-8 w-24 rounded-md"
+          className="bg-black text-white text-base h-8 w-24 rounded-md"
           onClick={handleEdit}
         >
           Edit
         </button>
       </div>
       <div className="flex flex-col mt-16 ml-8">
-        <label htmlFor="title" className="text-xl mb-4">
+        <label
+          htmlFor="title"
+          className="text-lg text-black font-semibold mb-4"
+        >
           Title
         </label>
         <input
           type="text"
           value={editTitle}
           onChange={(event) => setEditTitle(event.target.value)}
-          placeholder="add a title..."
-          className="w-80 h-10 bg-yellow rounded-md mb-8 p-5 border-none"
+          placeholder="edit a title..."
+          className="text-sm w-80 h-10 bg-yellow rounded-md mb-8 p-4 border-none"
         />
-        <label htmlFor="title" className="text-xl mb-4">
+        <label
+          htmlFor="title"
+          className="text-lg text-black font-semibold mb-4"
+        >
           Description
         </label>
         <textarea
           onChange={(event) => setEditDescription(event.target.value)}
           placeholder="add a decription ..."
-          className="w-80 h-32 bg-yellow rounded-md mb-8 p-5"
+          className="text-sm w-80 h-32 bg-yellow rounded-md mb-8 p-4"
           value={editDescription}
         />
+      </div>
+      <div className="flex flex-col ml-8">
+        <h1 className="text-lg text-black font-semibold mb-5">Tags</h1>
+        <div className="flex items-center ml-4 mb-5">
+          <button className="h-6 w-6 rounded-full bg-violet"></button>
+          <a href="work" className="ml-2 text-sm text-black">
+            work
+          </a>
+        </div>
+        <div className="flex items-center ml-4 mb-5">
+          <button className="h-6 w-6 rounded-full bg-blue"></button>
+          <a href="work" className="ml-2 text-sm text-black">
+            stydy
+          </a>
+        </div>
+        <div className="flex items-center ml-4 mb-5">
+          <button className="h-6 w-6 rounded-full bg-red"></button>
+          <a href="work" className="ml-2 text-sm text-black">
+            entertainmet
+          </a>
+        </div>
+        <div className="flex items-center ml-4 mb-5">
+          <button className="h-6 w-6 rounded-full bg-green"></button>
+          <a href="work" className="ml-2 text-sm text-black">
+            family
+          </a>
+        </div>
       </div>
     </>
   );
