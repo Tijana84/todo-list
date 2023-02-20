@@ -26,11 +26,11 @@ export const Todo = () => {
         <button
           type="button"
           onClick={handleGetStarted}
-          className="h-8 w-32 bg-black text-white tex-base flex justify-center items-center rounded-md"
+          className="h-8 w-32 bg-black text-white tex-base flex justify-center items-center rounded-md mb-12"
         >
           Get Started
         </button>
-        <img src={heroUrl} className="mt-16" alt="friends" />
+        <img src={heroUrl} className="mb-48 w-80" alt="friends" />
       </div>
     </div>
   );
