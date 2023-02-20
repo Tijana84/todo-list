@@ -50,7 +50,7 @@ export const TodoForm = () => {
           type="text"
           onChange={(event) => setTitle(event.target.value)}
           placeholder="add a title..."
-          className="text-sm w-80 h-10 bg-yellow rounded-md mb-8 p-5 border-none"
+          className="text-sm w-80 h-10 bg-yellow rounded-md mb-8 p-4 border-none item-center"
         />
         <label
           htmlFor="title"
@@ -61,30 +61,30 @@ export const TodoForm = () => {
         <textarea
           onChange={(event) => setDescription(event.target.value)}
           placeholder="add a decription ..."
-          className="text-sm w-80 h-32 bg-yellow rounded-md mb-8 p-5"
+          className="text-sm w-80 h-32 bg-yellow rounded-md mb-8 p-4"
         />
       </div>
-      <div className="flex flex-col p-4">
+      <div className="flex flex-col ml-8">
         <h1 className="text-lg text-black font-semibold mb-5">Tags</h1>
-        <div className="flex mr-4 mb-5">
+        <div className="flex items-center ml-4 mb-5">
           <button className="h-6 w-6 rounded-full bg-violet"></button>
           <a href="work" className="ml-2 text-sm text-black">
             work
           </a>
         </div>
-        <div className="flex mr-4 mb-5">
+        <div className="flex items-center ml-4 mb-5">
           <button className="h-6 w-6 rounded-full bg-blue"></button>
           <a href="work" className="ml-2 text-sm text-black">
             stydy
           </a>
         </div>
-        <div className="flex mr-4 mb-5">
+        <div className="flex items-center ml-4 mb-5">
           <button className="h-6 w-6 rounded-full bg-red"></button>
           <a href="work" className="ml-2 text-sm text-black">
             entertainmet
           </a>
         </div>
-        <div className="flex mr-4">
+        <div className="flex items-center ml-4 mb-5">
           <button className="h-6 w-6 rounded-full bg-green"></button>
           <a href="work" className="ml-2 text-sm text-black">
             family
