@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import heroUrl from "../images/hero.png";
 
-export const Home = () => {
+export const Todo = () => {
   const navigation = useNavigate();
 
   const handleGetStarted = () => {
@@ -36,4 +36,4 @@ export const Home = () => {
   );
 };
 
-export default Home;
+export default Todo;
