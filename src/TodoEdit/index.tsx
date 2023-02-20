@@ -71,7 +71,7 @@ export const TodoEdit = () => {
         </label>
         <textarea
           onChange={(event) => setEditDescription(event.target.value)}
-          placeholder="add a decription ..."
+          placeholder="edit a decription ..."
           className="text-sm w-80 h-32 bg-yellow rounded-md mb-8 p-4"
           value={editDescription}
         />
