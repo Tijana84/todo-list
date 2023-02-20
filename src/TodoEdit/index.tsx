@@ -2,7 +2,7 @@ import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-export const EditForm = () => {
+export const TodoEdit = () => {
   const params = useParams();
   const paramIndex = Number(params.index);
   const navigation = useNavigate();
@@ -74,4 +74,4 @@ export const EditForm = () => {
   );
 };
 
-export default EditForm;
+export default TodoEdit;

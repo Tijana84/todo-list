@@ -18,7 +18,7 @@ export const TodoList = () => {
   };
 
   const handleEdit = (index: number) => {
-    navigation("/edit-form/" + index);
+    navigation("/todo-edit/" + index);
   };
 
   const handleDelete = (index: number) => {

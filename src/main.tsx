@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./Home";
 import { TodoList } from "./TodoList";
 import { TodoForm } from "./TodoForm";
-import { EditForm } from "./EditForm";
+import { TodoEdit } from "./TodoEdit";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/" element={<Home />}></Route>
         <Route path="/todo-list" element={<TodoList />}></Route>
         <Route path="/todo-form" element={<TodoForm />}></Route>
-        <Route path="/edit-form/:index" element={<EditForm />}></Route>
+        <Route path="/todo-edit/:index" element={<TodoEdit />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
