@@ -136,11 +136,13 @@ export const TodoList = () => {
           );
         })}
       </div>
-      <img
-        src={photo1Url}
-        className="md:mb-48 md:mx-10 md:w-1/4 w-42"
-        alt="photo girl"
-      />
+      <div className="md:flex hidden">
+        <img
+          src={photo1Url}
+          className="md:mb-48 md:mx-10 md:w-1/5"
+          alt="photo girl"
+        />
+      </div>
     </div>
   );
 };
