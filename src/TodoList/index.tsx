@@ -119,7 +119,7 @@ export const TodoList = () => {
               <p className={classDescription}>{data.description}</p>
               <div className="flex justify-end items-center p-2">
                 <label
-                  htmlFor=""
+                  htmlFor="isDone"
                   className="mr-1 md:text-base text-sm text-black"
                 >
                   done

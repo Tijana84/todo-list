@@ -9,15 +9,15 @@ export const Todo = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center md:mt-64 mt-48">
-        <h1 className="md:text-7xl text-6xl mb-8">
+    <div className="flex flex-col justify-center h-screen max-w-screen-2xl">
+      <div className="flex flex-col justify-center items-center mt-48">
+        <h1 className="md:text-7xl text-6xl mb-7">
           <span className="text-blue font-semibold">t</span>
           <span className="text-red font-semibold">o</span>
           <span className="text-green font-semibold">d</span>
           <span className="text-violet font-semibold">o</span>
         </h1>
-        <p className="md:text-lg text-base text-center justify-center md:mx-64 p-4 mb-8">
+        <p className="md:text-lg text-base text-center justify-center md:mx-64 p-4 mb-7">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas natus
           atque commodi. Ad unde, nisi commodi est aspernatur enim quo.Ad unde,
           nisi commodi est aspernatur enim quo.
