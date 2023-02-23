@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
-import photo1Url from "../images/photo1.png";
+import girlUrl from "../images/girl.png";
 
 export const TodoList = () => {
   const navigation = useNavigate();
@@ -132,7 +132,7 @@ export const TodoList = () => {
       </div>
       <div className="md:flex hidden">
         <img
-          src={photo1Url}
+          src={girlUrl}
           className="md:mb-48 md:mx-10 md:w-1/5"
           alt="photo girl"
         />

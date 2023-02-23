@@ -1,6 +1,6 @@
 import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import photo2Url from "../images/photo2.png";
+import womanUrl from "../images/woman.png";
 
 export const TodoForm = () => {
   const navigation = useNavigate();
@@ -91,7 +91,7 @@ export const TodoForm = () => {
         </div>
       </div>
       <div className="md:flex hidden">
-        <img src={photo2Url} className="md:w-1/5" alt="photo girl rose" />
+        <img src={womanUrl} className="md:w-1/5" alt="photo woman rose" />
       </div>
     </div>
   );
