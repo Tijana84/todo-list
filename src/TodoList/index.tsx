@@ -34,8 +34,8 @@ export const TodoList = () => {
   };
 
   return (
-    <div>
-      <div className="flex justify-between md:p-10 p-4 mb-8">
+    <div className="flex flex-col justify-center h-screen max-w-screen-xl md:p-10 p-4">
+      <div className="flex justify-between items-end w-full md:mb-8 mt-16">
         <span className="md:text-5xl text-4xl text-black">todo</span>
         <button
           onClick={handlePlus}
@@ -44,32 +44,26 @@ export const TodoList = () => {
           +
         </button>
       </div>
-      <div className="md:flex md:mx-10">
-        <div className="md:flex-col md:items-start flex items-center px-4 mb-8">
-          <div className="md:items-center flex md:mb-9 mr-4">
-            <button className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-violet"></button>
-            <a href="work" className="ml-2 md:text-base text-sm text-black">
-              work
-            </a>
-          </div>
-          <div className="md:items-center flex md:mb-9 mr-4">
-            <button className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-blue"></button>
-            <a href="work" className="ml-2 md:text-base text-sm text-black">
-              stydy
-            </a>
-          </div>
-          <div className=" md:items-center flex md:mb-9 mr-4">
-            <button className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-red"></button>
-            <a href="work" className="ml-2 md:text-base text-sm text-black">
+      <div className="flex flex-col md:flex-row mt-8">
+        <div className="flex justify-around md:flex-col">
+          <button className="flex items-center mb-4 md:ml-4">
+            <div className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-violet"></div>
+            <span className="ml-2 md:text-base text-sm text-black">work</span>
+          </button>
+          <button className="flex items-center mb-4 md:ml-4">
+            <div className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-blue"></div>
+            <span className="ml-2 md:text-base text-sm text-black">stydy</span>
+          </button>
+          <button className="flex items-center mb-4 md:ml-4">
+            <div className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-red"></div>
+            <span className="ml-2 md:text-base text-sm text-black">
               entertainmet
-            </a>
-          </div>
-          <div className=" md:items-center flex md:mb-9 mr-4">
-            <button className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-green"></button>
-            <a href="work" className="ml-2 md:text-base text-sm text-black">
-              family
-            </a>
-          </div>
+            </span>
+          </button>
+          <button className="flex items-center mb-4 md:ml-4">
+            <div className="md:h-7 md:w-7 h-6 w-6 rounded-full bg-green"></div>
+            <span className="ml-2 md:text-base text-sm text-black">family</span>
+          </button>
         </div>
         {tasks.map((data: any, index: number) => {
           const classLabel = twMerge(
@@ -103,7 +97,7 @@ export const TodoList = () => {
                   >
                     <button
                       onClick={() => handleEdit(index)}
-                      className="flex items-center pl-4 bg-white md:w-40 h-12 w-36 rounded-t-lg mb-0.5 text-grey md:text-base text-sm font-semibold"
+                      className="flex items-center pl-4 bg-white md:w-40 h-12 w-36 rounded-t-lg border-b-2 boredr-grey text-grey md:text-base text-sm font-semibold"
                     >
                       Edit ...
                     </button>
