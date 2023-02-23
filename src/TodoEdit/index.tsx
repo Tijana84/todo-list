@@ -114,5 +114,3 @@ export const TodoEdit = () => {
     </>
   );
 };
-
-export default TodoEdit;

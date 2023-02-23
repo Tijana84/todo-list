@@ -9,8 +9,8 @@ export const Todo = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center h-screen max-w-screen-2xl">
-      <div className="flex flex-col justify-center items-center mt-48">
+    <div className="flex flex-col justify-center h-screen max-w-screen-xl">
+      <div className="flex flex-col justify-center items-center">
         <h1 className="md:text-7xl text-6xl mb-7">
           <span className="text-blue font-semibold">t</span>
           <span className="text-red font-semibold">o</span>
@@ -31,10 +31,8 @@ export const Todo = () => {
         >
           Get Started
         </button>
-        <img src={heroUrl} className="mb-48 md:w-1/3 w-80" alt="friends" />
+        <img src={heroUrl} className="md:w-1/3 w-80" alt="friends" />
       </div>
     </div>
   );
 };
-
-export default Todo;
