@@ -1,4 +1,5 @@
-import React, { useState, FormEvent } from "react";
+import { Formik } from "formik";
+import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import womanUrl from "../images/woman.png";
 
@@ -6,9 +7,25 @@ export const TodoForm = () => {
   const navigation = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [titleError, setTitleError] = useState("");
+  const [descriptionError, setDescriptionError] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (!title.trim()) {
+      setTitleError("title is required");
+      return;
+    }
+
+    if (!description.trim()) {
+      setDescriptionError("description is required");
+      return;
+    }
+    setTitle("");
+    setDescription("");
+    setTitleError("");
+    setDescriptionError("");
+
     const newTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     newTasks.push({
       title,
@@ -48,22 +65,31 @@ export const TodoForm = () => {
           Title
         </label>
         <input
+          name="title"
+          value={title}
           type="text"
           onChange={(event) => setTitle(event.target.value)}
           placeholder="add a title ..."
           className="md:text-base text-sm w-full md:h-12 h-10 bg-yellow rounded-md mb-8 p-4 border-none item-center"
         />
+        {titleError && <span>{titleError}</span>}
         <label
-          htmlFor="title"
+          htmlFor="description"
           className="md:text-xl text-lg text-black font-semibold mb-4"
         >
           Description
         </label>
         <textarea
-          onChange={(event) => setDescription(event.target.value)}
+          name="description"
+          value={description}
           placeholder="add a decription ..."
           className="md:text-base text-sm w-full md:h-48 h-32 bg-yellow rounded-md resize-none mb-8 p-4"
+          onChange={(event) => {
+            setDescription(event.target.value);
+            setDescriptionError("");
+          }}
         />
+        {descriptionError && <span>{descriptionError}</span>}
       </div>
       <div className="flex flex-col">
         <h1 className="md:text-xl text-lg text-black font-semibold mb-5">
