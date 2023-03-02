@@ -2,7 +2,7 @@ import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import womanUrl from "../images/woman.png";
 
-export const TodoForm = () => {
+export const TodoCreate = () => {
   const navigation = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

@@ -30,7 +30,7 @@ export const TodoList = () => {
   };
 
   const handlePlus = () => {
-    navigation("/todo-form");
+    navigation("/todo-create");
   };
 
   return (
