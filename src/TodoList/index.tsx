@@ -65,6 +65,7 @@ export const TodoList = () => {
             <span className="ml-2 md:text-base text-sm text-black">family</span>
           </button>
         </div>
+        <div className="flex flex-wrap">
         {tasks.map((data: any, index: number) => {
           const classLabel = twMerge(
             "md:text-lg text-base text-black font-semibold mt-4",
@@ -75,7 +76,7 @@ export const TodoList = () => {
             data.isDone ? "line-through" : ""
           );
           return (
-            <div key={index} className="bg-yellow rounded-lg m-2 mb-6 relative">
+            <div key={index} className="bg-yellow rounded-lg m-2 mb-6 relative max-w-sm">
               {tasks.map((name: any, index: number) => {})}
               <div className="flex justify-between items-end px-4" key={index}>
                 <h1 className={classLabel}>{data.title}</h1>
@@ -129,6 +130,8 @@ export const TodoList = () => {
             </div>
           );
         })}
+        </div>
+        
       </div>
       <div className="md:flex hidden">
         <img

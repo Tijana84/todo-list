@@ -6,27 +6,19 @@ export const TodoForm = () => {
   const navigation = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [titleError, setTitleError] = useState("");
-  const [descriptionError, setDescriptionError] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    // if (!title.trim()) {
-    //   setTitleError("title is required");
-    //   return;
-    // }
+
     if (!title.trim()) {
       alert("title is required");
     }
 
     if (!description.trim()) {
-      setDescriptionError("description is required");
-      return;
+      alert("description is required");
     }
     setTitle("");
     setDescription("");
-    setTitleError("");
-    setDescriptionError("");
 
     const newTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     newTasks.push({
@@ -44,7 +36,10 @@ export const TodoForm = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center h-screen max-w-screen-xl md:p-10 p-4">
+    <div
+      className="flex flex-col justify-center 
+     max-w-screen-xl md:p-10 p-4"
+    >
       <div className="flex justify-between items-end w-full mb-8">
         <button
           onClick={handleCancel}
@@ -74,10 +69,8 @@ export const TodoForm = () => {
           className="md:text-base text-sm w-full md:h-12 h-10 bg-yellow rounded-md mb-8 p-4 border-none item-center"
           onChange={(event) => {
             setTitle(event.target.value);
-            setTitleError("");
           }}
         />
-        {titleError && <span>{titleError}</span>}
         <label
           htmlFor="description"
           className="md:text-xl text-lg text-black font-semibold mb-4"
@@ -85,17 +78,14 @@ export const TodoForm = () => {
           Description
         </label>
         <textarea
-          required
           name="description"
           value={description}
           placeholder="add a decription ..."
           className="md:text-base text-sm w-full md:h-48 h-32 bg-yellow rounded-md resize-none mb-8 p-4"
           onChange={(event) => {
             setDescription(event.target.value);
-            setDescriptionError("");
           }}
         />
-        {descriptionError && <span>{descriptionError}</span>}
       </div>
       <div className="flex flex-col">
         <h1 className="md:text-xl text-lg text-black font-semibold mb-5">
