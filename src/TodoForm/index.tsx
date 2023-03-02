@@ -1,4 +1,3 @@
-import { Formik } from "formik";
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import womanUrl from "../images/woman.png";
@@ -12,9 +11,12 @@ export const TodoForm = () => {
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    // if (!title.trim()) {
+    //   setTitleError("title is required");
+    //   return;
+    // }
     if (!title.trim()) {
-      setTitleError("title is required");
-      return;
+      alert("title is required");
     }
 
     if (!description.trim()) {
@@ -68,9 +70,12 @@ export const TodoForm = () => {
           name="title"
           value={title}
           type="text"
-          onChange={(event) => setTitle(event.target.value)}
           placeholder="add a title ..."
           className="md:text-base text-sm w-full md:h-12 h-10 bg-yellow rounded-md mb-8 p-4 border-none item-center"
+          onChange={(event) => {
+            setTitle(event.target.value);
+            setTitleError("");
+          }}
         />
         {titleError && <span>{titleError}</span>}
         <label
@@ -80,6 +85,7 @@ export const TodoForm = () => {
           Description
         </label>
         <textarea
+          required
           name="description"
           value={description}
           placeholder="add a decription ..."

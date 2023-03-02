@@ -17,6 +17,13 @@ export const TodoEdit = () => {
 
   const handleEdit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (!editTitle.trim()) {
+      alert("title is required");
+    }
+    if (!editDescription.trim()) {
+      alert("description is required");
+    }
+
     const updatedTasks = tasks.map((task: any, index: number) => {
       if (paramIndex === index) {
         return { ...task, title: editTitle, description: editDescription };
@@ -71,10 +78,10 @@ export const TodoEdit = () => {
           Description
         </label>
         <textarea
-          onChange={(event) => setEditDescription(event.target.value)}
           placeholder="edit a decription ..."
           className="md:text-base text-sm w-full md:h-48 h-32 bg-yellow rounded-md resize-none mb-8 p-4"
           value={editDescription}
+          onChange={(event) => setEditDescription(event.target.value)}
         />
       </div>
       <div className="flex flex-col">
