@@ -34,8 +34,8 @@ export const TodoList = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center h-screen max-w-screen-xl md:p-10 p-4">
-      <div className="flex justify-between items-end w-full md:mb-8 mt-16">
+    <div className="flex flex-col justify-center max-w-screen-xl md:p-10 p-4">
+      <div className="flex justify-between items-end w-full mb-8">
         <span className="md:text-5xl text-4xl text-black">todo</span>
         <button
           onClick={handlePlus}
@@ -65,73 +65,78 @@ export const TodoList = () => {
             <span className="ml-2 md:text-base text-sm text-black">family</span>
           </button>
         </div>
-        <div className="flex flex-wrap">
-        {tasks.map((data: any, index: number) => {
-          const classLabel = twMerge(
-            "md:text-lg text-base text-black font-semibold mt-4",
-            data.isDone ? "line-through" : ""
-          );
-          const classDescription = twMerge(
-            "md:text-base text-sm text-black text-justify p-4",
-            data.isDone ? "line-through" : ""
-          );
-          return (
-            <div key={index} className="bg-yellow rounded-lg m-2 mb-6 relative max-w-sm">
-              {tasks.map((name: any, index: number) => {})}
-              <div className="flex justify-between items-end px-4" key={index}>
-                <h1 className={classLabel}>{data.title}</h1>
-                <button
-                  className="text-grey text-3xl"
-                  onClick={() =>
-                    setHidden({
-                      ...hidden,
-                      [index]: !hidden[index],
-                    })
-                  }
+        <div className="md:flex md:flex-wrap md:justify-evenly">
+          {tasks.map((data: any, index: number) => {
+            const classLabel = twMerge(
+              "md:text-lg text-base text-black font-semibold mt-4",
+              data.isDone ? "line-through" : ""
+            );
+            const classDescription = twMerge(
+              "md:text-base text-sm text-black text-justify p-4",
+              data.isDone ? "line-through" : ""
+            );
+            return (
+              <div
+                key={index}
+                className="bg-yellow rounded-lg m-2 mb-6 relative max-w-sm"
+              >
+                {tasks.map((name: any, index: number) => {})}
+                <div
+                  className="flex justify-between items-end px-4"
+                  key={index}
                 >
-                  ...
-                </button>
-                {hidden[index] ? (
-                  <div
-                    key={index}
-                    className="flex flex-col items-end p-2 absolute top-8 right-0"
+                  <h1 className={classLabel}>{data.title}</h1>
+                  <button
+                    className="text-grey text-3xl"
+                    onClick={() =>
+                      setHidden({
+                        ...hidden,
+                        [index]: !hidden[index],
+                      })
+                    }
                   >
-                    <button
-                      onClick={() => handleEdit(index)}
-                      className="flex items-center pl-4 bg-white md:w-40 h-12 w-36 rounded-t-lg border-b-2 boredr-grey text-grey md:text-base text-sm font-semibold"
+                    ...
+                  </button>
+                  {hidden[index] ? (
+                    <div
+                      key={index}
+                      className="flex flex-col items-end p-2 absolute top-8 right-0"
                     >
-                      Edit ...
-                    </button>
-                    <button
-                      onClick={() => handleDelete(index)}
-                      className="flex items-center pl-4 bg-white md:w-40 h-12 w-36 rounded-b-lg text-grey md:text-base text-sm font-semibold"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                ) : null}
+                      <button
+                        onClick={() => handleEdit(index)}
+                        className="flex items-center pl-4 bg-white md:w-40 h-12 w-36 rounded-t-lg border-b-2 boredr-grey text-grey md:text-base text-sm font-semibold"
+                      >
+                        Edit ...
+                      </button>
+                      <button
+                        onClick={() => handleDelete(index)}
+                        className="flex items-center pl-4 bg-white md:w-40 h-12 w-36 rounded-b-lg text-grey md:text-base text-sm font-semibold"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  ) : null}
+                </div>
+                <p className={classDescription}>{data.description}</p>
+                <div className="flex justify-end items-center p-2">
+                  <label
+                    htmlFor="isDone"
+                    className="mr-1 md:text-base text-sm text-black"
+                  >
+                    done
+                  </label>
+                  <input
+                    checked={data.isDone}
+                    name="isDone"
+                    type="checkbox"
+                    className="text-black bg-yellow rounded-2xl accent-yellow md:w-4 w-3"
+                    onChange={() => handleChecked(index)}
+                  />
+                </div>
               </div>
-              <p className={classDescription}>{data.description}</p>
-              <div className="flex justify-end items-center p-2">
-                <label
-                  htmlFor="isDone"
-                  className="mr-1 md:text-base text-sm text-black"
-                >
-                  done
-                </label>
-                <input
-                  checked={data.isDone}
-                  name="isDone"
-                  type="checkbox"
-                  className="text-black bg-yellow rounded-2xl accent-yellow md:w-4 w-3"
-                  onChange={() => handleChecked(index)}
-                />
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
         </div>
-        
       </div>
       <div className="md:flex hidden">
         <img

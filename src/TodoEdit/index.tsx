@@ -42,7 +42,7 @@ export const TodoEdit = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center h-screen max-w-screen-xl md:p-10 p-4">
+    <div className="flex flex-col justify-center max-w-screen-xl md:p-10 p-4">
       <div className="flex justify-between items-end w-full mb-8">
         <button
           onClick={handleCancel}
